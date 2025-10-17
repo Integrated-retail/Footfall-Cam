@@ -42,7 +42,7 @@ header h1 {
 #whatsapp-button svg {
   width: 32px;
   height: 32px;
-  transform: translateX(5px);
+  transform: translateX(1px);
   fill: white;
 }
 
