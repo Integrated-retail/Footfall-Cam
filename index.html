@@ -60,31 +60,32 @@
     </svg>
   </a>
   
-<!-- JS 动态贴靠 WhatsApp -->
+<!-- 🔧 自动调整 Tidio 位置 -->
   <script>
-    function alignTidio() {
-      const tidioIframe = document.querySelector('#tidio-chat iframe');
-      const waButton = document.querySelector('#whatsapp-button');
+    function fixTidioPosition() {
+      const tidioIframe = document.querySelector('iframe[src*="tidio.co"]');
+      const waButton = document.getElementById('whatsapp-button');
       if (!tidioIframe || !waButton) return;
 
       const waRect = waButton.getBoundingClientRect();
-      const gap = 3; // px ~ 3mm
+      const gap = 3; // px, 约等于 2–3mm
 
       tidioIframe.style.position = 'fixed';
       tidioIframe.style.bottom = `${window.innerHeight - waRect.bottom + gap}px`;
-      tidioIframe.style.right = `${window.innerWidth - waRect.left}px`;
-      tidioIframe.style.transform = 'scale(1)';
-      tidioIframe.style.zIndex = 99998;
+      tidioIframe.style.right = '20px';
+      tidioIframe.style.zIndex = '99998';
     }
 
+    // 每隔 1 秒检测一次，直到加载完毕
     const interval = setInterval(() => {
-      if (document.querySelector('#tidio-chat iframe')) {
+      const iframe = document.querySelector('iframe[src*="tidio.co"]');
+      if (iframe) {
         clearInterval(interval);
-        alignTidio();
+        fixTidioPosition();
       }
-    }, 500);
+    }, 1000);
 
-    window.addEventListener('resize', alignTidio);
+    window.addEventListener('resize', fixTidioPosition);
   </script>
   
   <footer>
@@ -92,6 +93,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
