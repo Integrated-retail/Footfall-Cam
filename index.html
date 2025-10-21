@@ -73,7 +73,7 @@
     const distanceFromBottom = window.innerHeight - waRect.bottom;
 
     // Tidio 应该比 WhatsApp 按钮再低一点（加上按钮本身高度 + gap）
-    const bottomOffset = distanceFromBottom + waRect.height + gapPx;
+    const bottomOffset = window.innerHeight - waRect.bottom - gapPx;
 
     tidioIframe.style.position = 'fixed';
     tidioIframe.style.bottom = `${bottomOffset}px`;
@@ -99,6 +99,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
