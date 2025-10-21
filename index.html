@@ -60,39 +60,39 @@
     </svg>
   </a>
   
-<!-- 🔧 自动调整 Tidio 位置 -->
-  <script>
-    function fixTidioPosition() {
+<script>
+    function alignTidioWithWhatsApp() {
       const tidioIframe = document.querySelector('iframe[src*="tidio.co"]');
       const waButton = document.getElementById('whatsapp-button');
       if (!tidioIframe || !waButton) return;
 
+      const gapPx = 3; // ≈ 2–3 mm
       const waRect = waButton.getBoundingClientRect();
-      const gap = 3; // px, 约等于 2–3mm
+      const bottomOffset = window.innerHeight - waRect.top + gapPx;
 
       tidioIframe.style.position = 'fixed';
-      tidioIframe.style.bottom = `${window.innerHeight - waRect.bottom + gap}px`;
+      tidioIframe.style.bottom = `${bottomOffset}px`;
       tidioIframe.style.right = '20px';
       tidioIframe.style.zIndex = '99998';
     }
 
-    // 每隔 1 秒检测一次，直到加载完毕
-    const interval = setInterval(() => {
+    // 每 500 ms 检查一次
+    const watchTidio = setInterval(() => {
       const iframe = document.querySelector('iframe[src*="tidio.co"]');
       if (iframe) {
-        clearInterval(interval);
-        fixTidioPosition();
+        clearInterval(watchTidio);
+        alignTidioWithWhatsApp();
       }
-    }, 1000);
+    }, 500);
 
-    window.addEventListener('resize', fixTidioPosition);
+    window.addEventListener('resize', alignTidioWithWhatsApp);
   </script>
-  
   <footer>
     © Integrated Retail — FootfallCam
   </footer>
 </body>
 </html>
+
 
 
 
