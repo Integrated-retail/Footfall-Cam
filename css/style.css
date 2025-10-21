@@ -17,7 +17,7 @@ header h1 {
 /* 📱 手机端优化 */
 @media (max-width: 768px) {
   #whatsapp-button {
-    bottom: 85px;   /* 从 130px 改成 85px 左右，和 Tidio 更贴近 */
+    bottom: 55px;   /* 从 130px 改成 85px 左右，和 Tidio 更贴近 */
     right: 15px;    /* 稍微内缩一点，避免屏幕边缘挤压 */
     width: 55px;
     height: 55px;
