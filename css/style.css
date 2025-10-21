@@ -46,6 +46,13 @@ header h1 {
   fill: white;
 }
 
+#tidio-container {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  overflow: visible;
+}
+
 /* 💬 强制确保 Tidio 可见 */
 #tidio-chat,
 #tidio-chat iframe {
