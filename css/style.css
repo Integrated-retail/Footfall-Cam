@@ -33,7 +33,16 @@ header h1 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: all 0.25s ease;
 }
-
+#chat-wrapper {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px; /* ≈ 2~3mm */
+  z-index: 99999;
+}
 #whatsapp-button:hover {
   background-color: #20b358;
   transform: scale(1.1);
