@@ -66,11 +66,14 @@
     const waButton = document.getElementById('whatsapp-button');
     if (!tidioIframe || !waButton) return;
 
-    const gapPx = 3; // ≈ 2–3 mm
+    const gapPx = 8; // 调整间距（≈ 2–3mm）
     const waRect = waButton.getBoundingClientRect();
 
-    // 计算按钮底部到底部距离
-    const bottomOffset = window.innerHeight - waRect.bottom + gapPx;
+    // WhatsApp 按钮底部到窗口底部的距离
+    const distanceFromBottom = window.innerHeight - waRect.bottom;
+
+    // Tidio 应该比 WhatsApp 按钮再低一点（加上按钮本身高度 + gap）
+    const bottomOffset = distanceFromBottom + waRect.height + gapPx;
 
     tidioIframe.style.position = 'fixed';
     tidioIframe.style.bottom = `${bottomOffset}px`;
@@ -78,7 +81,7 @@
     tidioIframe.style.zIndex = '99998';
   }
 
-  // 轮询直到 Tidio 加载完成
+  // 等待 Tidio iframe 加载完成
   const watchTidio = setInterval(() => {
     const iframe = document.querySelector('iframe[src*="tidio.co"]');
     if (iframe) {
@@ -87,15 +90,16 @@
     }
   }, 500);
 
-  // 响应式重新对齐
   window.addEventListener('resize', alignTidioWithWhatsApp);
 </script>
+
 
   <footer>
     © Integrated Retail — FootfallCam
   </footer>
 </body>
 </html>
+
 
 
 
