@@ -17,7 +17,7 @@ header h1 {
 /* 📱 手机端优化 */
 @media (max-width: 768px) {
   #whatsapp-button {
-    bottom: 105px !important; /* 强制覆盖 */
+    bottom: 135px !important; /* 强制覆盖 */
     right: 15px !important;
   }
 
