@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  max-width: 900px;
   margin: 40px auto;
+  max-width: 900px;
   padding: 0 20px;
   line-height: 1.6;
 }
@@ -14,7 +14,7 @@ header h1 {
   color: #333;
 }
 
-/* WhatsApp 按钮 */
+/* ✅ WhatsApp 按钮 */
 #whatsapp-button {
   position: fixed;
   bottom: 20px;
@@ -29,7 +29,7 @@ header h1 {
   font-size: 32px;
   color: white;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.25s ease;
   z-index: 99999;
 }
@@ -44,9 +44,9 @@ header h1 {
   fill: white;
 }
 
-/* 桌面端稍微提高位置 */
+/* 桌面端稍微上抬 */
 @media (min-width: 769px) {
   #whatsapp-button {
-    bottom: 25px;
+    bottom: 30px;
   }
 }
