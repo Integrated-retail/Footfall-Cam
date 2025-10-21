@@ -61,37 +61,42 @@
   </a>
   
 <script>
-    function alignTidioWithWhatsApp() {
-      const tidioIframe = document.querySelector('iframe[src*="tidio.co"]');
-      const waButton = document.getElementById('whatsapp-button');
-      if (!tidioIframe || !waButton) return;
+  function alignTidioWithWhatsApp() {
+    const tidioIframe = document.querySelector('iframe[src*="tidio.co"]');
+    const waButton = document.getElementById('whatsapp-button');
+    if (!tidioIframe || !waButton) return;
 
-      const gapPx = 3; // ≈ 2–3 mm
-      const waRect = waButton.getBoundingClientRect();
-      const bottomOffset = window.innerHeight - waRect.top + gapPx;
+    const gapPx = 3; // ≈ 2–3 mm
+    const waRect = waButton.getBoundingClientRect();
 
-      tidioIframe.style.position = 'fixed';
-      tidioIframe.style.bottom = `${bottomOffset}px`;
-      tidioIframe.style.right = '20px';
-      tidioIframe.style.zIndex = '99998';
+    // 计算按钮底部到底部距离
+    const bottomOffset = window.innerHeight - waRect.bottom + gapPx;
+
+    tidioIframe.style.position = 'fixed';
+    tidioIframe.style.bottom = `${bottomOffset}px`;
+    tidioIframe.style.right = '20px';
+    tidioIframe.style.zIndex = '99998';
+  }
+
+  // 轮询直到 Tidio 加载完成
+  const watchTidio = setInterval(() => {
+    const iframe = document.querySelector('iframe[src*="tidio.co"]');
+    if (iframe) {
+      clearInterval(watchTidio);
+      alignTidioWithWhatsApp();
     }
+  }, 500);
 
-    // 每 500 ms 检查一次
-    const watchTidio = setInterval(() => {
-      const iframe = document.querySelector('iframe[src*="tidio.co"]');
-      if (iframe) {
-        clearInterval(watchTidio);
-        alignTidioWithWhatsApp();
-      }
-    }, 500);
+  // 响应式重新对齐
+  window.addEventListener('resize', alignTidioWithWhatsApp);
+</script>
 
-    window.addEventListener('resize', alignTidioWithWhatsApp);
-  </script>
   <footer>
     © Integrated Retail — FootfallCam
   </footer>
 </body>
 </html>
+
 
 
 
