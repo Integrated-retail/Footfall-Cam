@@ -18,7 +18,7 @@ header h1 {
 /* 桌面端可以适当上抬整体按钮 */
 @media (min-width: 769px) {
   #chat-buttons-wrapper {
-    bottom: 130px;
+    bottom: 60px;
   }
 
 
