@@ -65,13 +65,25 @@
 <script src="https://code.tidio.co/bmlucgvngipfmmjyomyzv6vm9bkgjmgf.js"></script>
   
 
-
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const moveTidio = setInterval(() => {
+    const tidio = document.querySelector('iframe[src*="tidio.co"]');
+    const container = document.getElementById("tidio-container");
+    if (tidio && container && !container.contains(tidio)) {
+      container.appendChild(tidio);
+      clearInterval(moveTidio);
+    }
+  }, 500);
+});
+</script>
 
   <footer>
     © Integrated Retail — FootfallCam
   </footer>
 </body>
 </html>
+
 
 
 
