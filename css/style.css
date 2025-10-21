@@ -57,7 +57,7 @@ header h1 {
 @media (min-width: 769px) {
   #chat-buttons-wrapper {
     bottom: 130px;   /* 上抬整体按钮 */
-    gap: 5mm;        /* 桌面端间距稍大，可调 */
+    gap: 5mm;        /* 桌面端间距稍大 */
   }
 }
 
