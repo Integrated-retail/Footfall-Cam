@@ -73,10 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("tidio-container");
     if (tidio && container && !container.contains(tidio)) {
       container.appendChild(tidio);
+      // 确保 iframe 永远和 WhatsApp 按钮间距固定
+      tidio.style.marginTop = '3px'; // 约 2~3 mm
       clearInterval(moveTidio);
     }
   }, 500);
+
+  // 手机或窗口 resize 时保持对齐
+  window.addEventListener('resize', () => {
+    const tidio = document.querySelector('iframe[src*="tidio.co"]');
+    if (tidio) tidio.style.marginTop = '3px';
+  });
 });
+
 </script>
 
   <footer>
@@ -84,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </footer>
 </body>
 </html>
+
 
 
 
