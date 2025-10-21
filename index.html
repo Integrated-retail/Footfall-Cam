@@ -60,13 +60,39 @@
     </svg>
   </a>
   
+<!-- JS 动态贴靠 WhatsApp -->
+  <script>
+    function alignTidio() {
+      const tidioIframe = document.querySelector('#tidio-chat iframe');
+      const waButton = document.querySelector('#whatsapp-button');
+      if (!tidioIframe || !waButton) return;
 
+      const waRect = waButton.getBoundingClientRect();
+      const gap = 3; // px ~ 3mm
+
+      tidioIframe.style.position = 'fixed';
+      tidioIframe.style.bottom = `${window.innerHeight - waRect.bottom + gap}px`;
+      tidioIframe.style.right = `${window.innerWidth - waRect.left}px`;
+      tidioIframe.style.transform = 'scale(1)';
+      tidioIframe.style.zIndex = 99998;
+    }
+
+    const interval = setInterval(() => {
+      if (document.querySelector('#tidio-chat iframe')) {
+        clearInterval(interval);
+        alignTidio();
+      }
+    }, 500);
+
+    window.addEventListener('resize', alignTidio);
+  </script>
   
   <footer>
     © Integrated Retail — FootfallCam
   </footer>
 </body>
 </html>
+
 
 
 
