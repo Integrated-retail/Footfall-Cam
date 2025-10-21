@@ -15,19 +15,23 @@ header h1 {
 }
 
 /* 📱 手机端优化 */
-@media (max-width: 768px) {
-  #whatsapp-button {
-    bottom: 135px !important; /* 强制覆盖 */
-    right: 15px !important;
+/* 桌面端可以适当上抬整体按钮 */
+@media (min-width: 769px) {
+  #chat-buttons-wrapper {
+    bottom: 130px;
   }
 
-  #tidio-chat,
-  #tidio-chat iframe {
-    bottom: 0 !important;
-   transform: translateY(0) scale(1) !important; /* 避免上浮 */
 
-
-  }
+/* Tidio iframe 手机端固定，不放大 */
+#tidio-chat,
+#tidio-chat iframe {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;  /* 放入容器内，相对排列 */
+  bottom: auto !important;
+  transform: scale(1) !important;
+}
 }
 
 
