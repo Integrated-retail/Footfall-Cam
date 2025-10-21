@@ -20,7 +20,7 @@ header h1 {
   #chat-buttons-wrapper {
     bottom: 60px;
   }
-
+}
 
 /* Tidio iframe 手机端固定，不放大 */
 #tidio-chat,
@@ -32,7 +32,7 @@ header h1 {
   bottom: auto !important;
   transform: scale(1) !important;
 }
-}
+
 
 
 
