@@ -24,7 +24,9 @@ header h1 {
   #tidio-chat,
   #tidio-chat iframe {
     bottom: 0 !important;
-    transform: translateY(0) !important; /* 避免上浮 */
+   transform: translateY(0) scale(1) !important; /* 避免上浮 */
+
+
   }
 }
 
