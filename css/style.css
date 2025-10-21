@@ -1,8 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 40px auto;
-  max-width: 900px;
-  padding: 0 20px;
+  max-width: 900px;     /* 限制最大宽度 */
+  margin: 40px auto;     /* 自动左右居中 + 顶部留白 */
+  padding: 0 20px;       /* 内侧留点边距 */
   line-height: 1.6;
 }
 
@@ -14,10 +14,10 @@ header h1 {
   color: #333;
 }
 
-/* ✅ WhatsApp 按钮 */
+/* 📱 WhatsApp Floating Button */
 #whatsapp-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 130px;        /* ⬆️ 往上抬高，避免与 Tidio 重叠 */
   right: 20px;
   width: 60px;
   height: 60px;
@@ -29,24 +29,34 @@ header h1 {
   font-size: 32px;
   color: white;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 99999;      /* 高于 Tidio */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: all 0.25s ease;
-  z-index: 99999;
 }
 
 #whatsapp-button:hover {
+  background-color: #20b358;
   transform: scale(1.1);
 }
 
 #whatsapp-button svg {
   width: 32px;
   height: 32px;
+  transform: translateX(0.5px) translateY(0.5px); /* ✅ 细调到居中 */
   fill: white;
 }
 
-/* 桌面端稍微上抬 */
-@media (min-width: 769px) {
-  #whatsapp-button {
-    bottom: 30px;
-  }
+/* 💬 强制确保 Tidio 可见 */
+#tidio-chat,
+#tidio-chat iframe {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 9999 !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  transform: scale(1.07);    /* 约等于放大到 60px */
+  transform-origin: bottom right; /* 从右下角放大，不偏移 */
+
 }
