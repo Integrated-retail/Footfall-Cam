@@ -14,6 +14,28 @@ header h1 {
   color: #333;
 }
 
+/* 📱 手机端优化 */
+@media (max-width: 768px) {
+  #whatsapp-button {
+    bottom: 85px;   /* 从 130px 改成 85px 左右，和 Tidio 更贴近 */
+    right: 15px;    /* 稍微内缩一点，避免屏幕边缘挤压 */
+    width: 55px;
+    height: 55px;
+  }
+
+  #whatsapp-button svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  #tidio-chat,
+  #tidio-chat iframe {
+    transform: scale(1.0); /* 手机上恢复正常大小，不放大 */
+  }
+}
+
+
+
 /* 📱 WhatsApp Floating Button */
 #whatsapp-button {
   position: fixed;
