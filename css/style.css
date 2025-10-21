@@ -1,8 +1,9 @@
+/* 基础页面样式 */
 body {
   font-family: Arial, sans-serif;
-  max-width: 900px;     /* 限制最大宽度 */
-  margin: 40px auto;     /* 自动左右居中 + 顶部留白 */
-  padding: 0 20px;       /* 内侧留点边距 */
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
   line-height: 1.6;
 }
 
@@ -14,34 +15,19 @@ header h1 {
   color: #333;
 }
 
-/* 📱 手机端优化 */
-/* 桌面端可以适当上抬整体按钮 */
-@media (min-width: 769px) {
-  #chat-buttons-wrapper {
-    bottom: 60px;
-  }
-}
-
-/* Tidio iframe 手机端固定，不放大 */
-#tidio-chat,
-#tidio-chat iframe {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  position: relative !important;  /* 放入容器内，相对排列 */
-  bottom: auto !important;
-  transform: scale(1) !important;
-}
-
-
-
-
-
-/* 📱 WhatsApp Floating Button */
-#whatsapp-button {
+/* 📱 按钮容器，统一管理 WhatsApp 和 Tidio */
+#chat-buttons-wrapper {
   position: fixed;
-  bottom: 130px;        /* ⬆️ 往上抬高，避免与 Tidio 重叠 */
+  bottom: 20px;           /* 手机端整体底部 */
   right: 20px;
+  display: flex;
+  flex-direction: column; /* 上下排列 */
+  gap: 0.3mm;             /* 按钮间距约 0.3mm */
+  z-index: 99999;
+}
+
+/* WhatsApp 按钮样式 */
+#whatsapp-button {
   width: 60px;
   height: 60px;
   background-color: #25D366;
@@ -52,34 +38,36 @@ header h1 {
   font-size: 32px;
   color: white;
   text-decoration: none;
-  z-index: 99999;      /* 高于 Tidio */
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: all 0.25s ease;
 }
 
 #whatsapp-button:hover {
-  background-color: #20b358;
   transform: scale(1.1);
 }
 
 #whatsapp-button svg {
   width: 32px;
   height: 32px;
-  transform: translateX(0.5px) translateY(0.5px); /* ✅ 细调到居中 */
+  transform: translateX(0.5px) translateY(0.5px);
   fill: white;
 }
 
-/* 💬 强制确保 Tidio 可见 */
+/* 桌面端调整整体按钮位置和间距 */
+@media (min-width: 769px) {
+  #chat-buttons-wrapper {
+    bottom: 130px;   /* 上抬整体按钮 */
+    gap: 5mm;        /* 桌面端间距稍大，可调 */
+  }
+}
+
+/* Tidio iframe 在容器内排列，手机端不放大 */
 #tidio-chat,
 #tidio-chat iframe {
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
-  z-index: 9999 !important;
-  position: fixed !important;
-  bottom: 0 !important;
-  right: 0 !important;
-  transform: scale(1.07);    /* 约等于放大到 60px */
-  transform-origin: bottom right; /* 从右下角放大，不偏移 */
-
+  position: relative !important; /* 容器内排列 */
+  bottom: auto !important;
+  transform: scale(1) !important;
 }
