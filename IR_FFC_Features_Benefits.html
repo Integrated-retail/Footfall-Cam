@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FootfallCam – Feature → Benefit</title>
+<title>FootfallCam – Key Value</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         background: #f8fafc;
         margin: 0;
         padding: 20px;
@@ -17,7 +17,10 @@
     .container {
         max-width: 1000px;
         margin: auto;
+        background: #ffffff;
         padding: 40px 20px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     h1 {
@@ -30,59 +33,83 @@
         text-align: center;
         font-size: 1.2rem;
         color: #475569;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
     .divider {
         height: 3px;
         width: 80px;
-        background: #2563eb;
-        margin: 20px auto 40px;
+        background: linear-gradient(to right, #2563eb, #38bdf8);
+        margin: 30px auto;
         border-radius: 2px;
     }
 
-    .pair-section {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .section {
+        display: flex;
+        flex-wrap: wrap;
         gap: 20px;
-        justify-items: center;
+        justify-content: center;
     }
 
-    .pair-card {
+    .card {
+        flex: 1 1 280px;
         background: #f1f5f9;
         padding: 25px;
-        border-radius: 12px;
+        border-radius: 14px;
+        min-width: 250px;
         text-align: center;
-        transition: transform 0.2s;
     }
 
-    .pair-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .pair-card i {
+    .card i {
         font-size: 2rem;
         color: #2563eb;
         margin-bottom: 10px;
     }
 
-    .feature {
-        font-size: 1.3rem;
-        font-weight: bold;
+    .card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
         color: #2563eb;
-        margin-bottom: 5px;
     }
 
-    .benefit {
-        font-size: 1rem;
+    ul {
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 15px;
+    }
+
+    li .title {
+        display: block;
+        font-weight: bold;
+        font-size: 1.05rem;
+        margin-bottom: 3px;
+    }
+
+    li .desc {
+        font-size: 0.95rem;
         color: #0f172a;
     }
 
     @media (max-width: 600px) {
-        h1 { font-size: 2rem; }
-        .subtitle { font-size: 1rem; }
-        .feature { font-size: 1.1rem; }
-        .benefit { font-size: 0.95rem; }
+        h1 {
+            font-size: 2rem;
+        }
+        .subtitle {
+            font-size: 1rem;
+        }
+        .card h2 {
+            font-size: 1.2rem;
+        }
+        li .title {
+            font-size: 1rem;
+        }
+        li .desc {
+            font-size: 0.9rem;
+        }
     }
 </style>
 </head>
@@ -90,30 +117,52 @@
 
 <div class="container">
 
-    <h1>FootfallCam – Features & Benefits</h1>
-    <div class="subtitle">有这个 Feature 才能获得对应 Benefit</div>
+    <h1>FootfallCam – Key Value</h1>
+    <div class="subtitle">Turn visitor data into business growth</div>
+
     <div class="divider"></div>
 
-    <div class="pair-section">
-        <!-- Pair 1 -->
-        <div class="pair-card">
-            <i class="fa fa-users"></i>
-            <div class="feature">Accurate People Counting</div>
-            <div class="benefit">Better Planning – Right staff, right time</div>
+    <div class="section">
+        <div class="card">
+            <h2>3 Key Features</h2>
+            <ul>
+                <li>
+                    <i class="fa fa-users"></i>
+                    <span class="title">Accurate People Counting</span>
+                    <span class="desc">Know true traffic flow</span>
+                </li>
+                <li>
+                    <i class="fa fa-chart-line"></i>
+                    <span class="title">Real-Time Analytics</span>
+                    <span class="desc">Respond instantly to peak hours</span>
+                </li>
+                <li>
+                    <i class="fa fa-map"></i>
+                    <span class="title">Heatmaps & Zone Tracking</span>
+                    <span class="desc">Optimize store layout & engagement</span>
+                </li>
+            </ul>
         </div>
 
-        <!-- Pair 2 -->
-        <div class="pair-card">
-            <i class="fa fa-chart-line"></i>
-            <div class="feature">Real-Time Analytics</div>
-            <div class="benefit">Improved Customer Experience – Shorter queues, smoother flow</div>
-        </div>
-
-        <!-- Pair 3 -->
-        <div class="pair-card">
-            <i class="fa fa-map"></i>
-            <div class="feature">Heatmaps & Zone Tracking</div>
-            <div class="benefit">Higher Sales – Smarter layouts & targeted promotions</div>
+        <div class="card">
+            <h2>3 Key Benefits</h2>
+            <ul>
+                <li>
+                    <i class="fa fa-calendar-alt"></i>
+                    <span class="title">Better Planning</span>
+                    <span class="desc">Right staff, right time</span>
+                </li>
+                <li>
+                    <i class="fa fa-smile"></i>
+                    <span class="title">Improved Customer Experience</span>
+                    <span class="desc">Shorter queues, smoother flow</span>
+                </li>
+                <li>
+                    <i class="fa fa-chart-bar"></i>
+                    <span class="title">Higher Sales</span>
+                    <span class="desc">Smarter layouts & targeted promotions</span>
+                </li>
+            </ul>
         </div>
     </div>
 
