@@ -44,52 +44,43 @@
         border-radius: 2px;
     }
 
+    .section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-items: center;
+    }
+
     .card {
         background: #f1f5f9;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .card i {
+        font-size: 2rem;
+        color: #2563eb;
+        margin-bottom: 15px;
     }
 
     .card h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         color: #2563eb;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        margin-bottom: 10px;
     }
 
-    ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    li {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 12px;
+    .card p {
         font-size: 1rem;
-    }
-
-    li i {
-        width: 24px;
-        text-align: center;
-        color: #2563eb;
-        flex-shrink: 0;
-    }
-
-    strong {
+        line-height: 1.5;
         color: #0f172a;
     }
 
     @media (max-width: 600px) {
         h1 { font-size: 2rem; }
         .subtitle { font-size: 1rem; }
-        .card h2 { font-size: 1.3rem; }
-        li { font-size: 0.95rem; }
+        .card h2 { font-size: 1.2rem; }
+        .card p { font-size: 0.95rem; }
     }
 </style>
 </head>
@@ -99,27 +90,46 @@
 
     <h1>FootfallCam – Key Value</h1>
     <div class="subtitle">Turn visitor data into business growth</div>
-
     <div class="divider"></div>
 
-    <!-- Key Features -->
-    <div class="card">
-        <h2><i class="fa fa-cogs"></i> 3 Key Features</h2>
-        <ul>
-            <li><i class="fa fa-users"></i> <strong>Accurate People Counting</strong> – Know true traffic flow</li>
-            <li><i class="fa fa-chart-line"></i> <strong>Real-Time Analytics</strong> – Respond instantly to peak hours</li>
-            <li><i class="fa fa-map"></i> <strong>Heatmaps & Zone Tracking</strong> – Optimize store layout & engagement</li>
-        </ul>
-    </div>
+    <div class="section">
+        <!-- Key Features -->
+        <div class="card">
+            <i class="fa fa-users"></i>
+            <h2>Accurate People Counting</h2>
+            <p>Know true traffic flow</p>
+        </div>
 
-    <!-- Key Benefits -->
-    <div class="card">
-        <h2><i class="fa fa-gem"></i> 3 Key Benefits</h2>
-        <ul>
-            <li><i class="fa fa-calendar-alt"></i> <strong>Better Planning</strong> – Right staff, right time</li>
-            <li><i class="fa fa-smile"></i> <strong>Improved Customer Experience</strong> – Shorter queues, smoother flow</li>
-            <li><i class="fa fa-chart-bar"></i> <strong>Higher Sales</strong> – Smarter layouts & targeted promotions</li>
-        </ul>
+        <div class="card">
+            <i class="fa fa-chart-line"></i>
+            <h2>Real-Time Analytics</h2>
+            <p>Respond instantly to peak hours</p>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-map"></i>
+            <h2>Heatmaps & Zone Tracking</h2>
+            <p>Optimize store layout & engagement</p>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="card">
+            <i class="fa fa-calendar-alt"></i>
+            <h2>Better Planning</h2>
+            <p>Right staff, right time</p>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-smile"></i>
+            <h2>Improved Customer Experience</h2>
+            <p>Shorter queues, smoother flow</p>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-chart-bar"></i>
+            <h2>Higher Sales</h2>
+            <p>Smarter layouts & targeted promotions</p>
+        </div>
     </div>
 
 </div>
