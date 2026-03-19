@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Object.keys(localStorage).forEach(key => { if(key.includes('bp')) localStorage.removeItem(key); });
 const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_' + Math.random().toString(36).substring(2, 7));
 
-	
+/*	
   window.botpress.init({
   "botId": "49165123-5810-4ed6-8326-a302859ce537",
   "userId": randomUserId,
@@ -282,7 +282,32 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
   },
   "clientId": "896515a3-b530-4f8c-a516-c1c5062c6242",
   "selector": "#webchat"
+});*/
+
+window.botpress.init({
+  "botId": "49165123-5810-4ed6-8326-a302859ce537",
+  "configuration": {
+    "version": "v1",
+    "website": {},
+    "email": {},
+    "phone": {},
+    "termsOfService": {},
+    "privacyPolicy": {},
+    "color": "#3276EA",
+    "variant": "solid",
+    "headerVariant": "glass",
+    "themeMode": "light",
+    "fontFamily": "inter",
+    "radius": 4,
+    "feedbackEnabled": false,
+    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
+  },
+  "clientId": "896515a3-b530-4f8c-a516-c1c5062c6242",
+  "selector": "#webchat"
 });
+
+
+	
 
 	 window.botpress.on('webchat:ready', () => {
         console.log("🤖 Botpress 已就绪，深度监听器启动...");
