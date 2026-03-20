@@ -364,6 +364,18 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
                 safeRedirect(extractedUrl);
             }
         });
+
+		// 3. 发送触发词
+		setTimeout(() => {
+		    console.log("📡 尝试触发欢迎语...");
+		    
+		    // 关键：v2 版本请使用 sendMessage
+		    window.botpress.sendMessage({
+		        type: 'text',
+		        text: 'START_MY_WELCOME' 
+		    });
+		}, 1000);
+		 
     });
 // When webchat is ready
     window.botpress.on('webchat:initialized', () => {
