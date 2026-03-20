@@ -23,6 +23,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
  <!-- <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>-->
   <script src="https://cdn.botpress.cloud/desk/webchat/v4.0/inject.js"></script>
+
+	
 <style>
   #webchat .bpWebchat {
     position: unset;
@@ -284,10 +286,11 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
   "selector": "#webchat"
 });*/
 
-window.botpress.init({
-  "botId": "49165123-5810-4ed6-8326-a302859ce537",
+  window.botpress.init({
+  "botId": "e7e38254-84fe-4d31-a5de-ddfd786d9420",
   "configuration": {
-    "version": "v1",
+    "version": "v2",
+    "botName": "Integrated Retail Support Agent",
     "website": {},
     "email": {},
     "phone": {},
@@ -300,9 +303,15 @@ window.botpress.init({
     "fontFamily": "inter",
     "radius": 4,
     "feedbackEnabled": false,
-    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
+    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+    "soundEnabled": false,
+    "proactiveMessageEnabled": false,
+    "proactiveBubbleMessage": "Hi! 👋 Need help?",
+    "proactiveBubbleTriggerType": "afterDelay",
+    "proactiveBubbleDelayTime": 10,
+    "conversationHistory": false
   },
-  "clientId": "896515a3-b530-4f8c-a516-c1c5062c6242",
+  "clientId": "752bc3c1-c7d6-49c1-a855-f58c1baf56ef",
   "selector": "#webchat"
 });
 
