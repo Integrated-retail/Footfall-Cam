@@ -363,7 +363,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
         });
 
 		// 3. 发送触发词
-setTimeout(() => {
+/*setTimeout(() => {
     console.log("📡 发送自定义事件信号...");
     window.botpressWebChat.sendEvent({
         type: 'custom_event', // 类型必须是 trigger
@@ -373,7 +373,7 @@ setTimeout(() => {
     });
 }, 800);
 		 
-    });
+    });*/
 // When webchat is ready
     window.botpress.on('webchat:initialized', () => {
       console.log('✅ Webchat initialized');
@@ -387,6 +387,16 @@ setTimeout(() => {
           timestamp: new Date().toISOString()
         }
       });
+
+			setTimeout(() => {
+    console.log("📡 发送自定义事件信号...");
+    window.botpress.sendEvent({
+        type: 'custom_event', // 类型必须是 trigger
+        payload: { 
+            action: 'START_MY_WELCOME' // 负载内容
+        }
+    });
+}, 800);	
     });	
   // --- Hamburger drawer ---
   const hamburger = document.getElementById('hamburger');
