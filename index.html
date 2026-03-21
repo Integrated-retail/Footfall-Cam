@@ -375,11 +375,11 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
 		 */
     });
 // When webchat is ready
-    window.botpress.on('webchat:initialized', () => {
+    window.botpress.on('webchat:initialized', async() => {
       console.log('✅ Webchat initialized');
 
       // STEP 1: Upd2ate User with data
-      window.botpress.updateUser({
+      await window.botpress.updateUser({
         data: {
           firstname:urlParams.get('firstname') || "",
           page_name: "FootFall Cam",
@@ -387,7 +387,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
           timestamp: new Date().toISOString()
         }
       });
-
+/*
 			setTimeout(() => {
     console.log("📡 发送自定义事件信号...");
     window.botpress.sendEvent({
@@ -396,7 +396,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
             action: 'START_MY_WELCOME' // 负载内容
         }
     });
-}, 800);	
+}, 800);	*/
     });	
   // --- Hamburger drawer ---
   const hamburger = document.getElementById('hamburger');
