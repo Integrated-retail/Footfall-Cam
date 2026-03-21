@@ -369,7 +369,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
 setTimeout(() => {
     console.log("📡 发送自定义事件信号...");
     window.botpress.sendEvent({
-        type: 'trigger', // 类型必须是 trigger
+        type: 'custom_event', // 类型必须是 trigger
         payload: { 
             action: 'START_MY_WELCOME' // 负载内容
         }
