@@ -370,7 +370,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
 		    console.log("📡 尝试触发欢迎语...");
 		    
 		    // 关键：v2 版本请使用 sendMessage
-		    window.botpress.sendMessage({
+		    window.botpress.sendEvent({
 		        type: 'text',
 		        text: 'START_MY_WELCOME' 
 		    });
