@@ -366,15 +366,15 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
         });
 
 		// 3. 发送触发词
-		setTimeout(() => {
-		    console.log("📡 尝试触发欢迎语...");
-		    
-		    // 关键：v2 版本请使用 sendMessage
-		    window.botpress.sendEvent({
-		        type: 'text',
-		        text: 'START_MY_WELCOME' 
-		    });
-		}, 1000);
+setTimeout(() => {
+    console.log("📡 发送自定义事件信号...");
+    window.botpress.sendEvent({
+        type: 'trigger', // 类型必须是 trigger
+        payload: { 
+            action: 'START_MY_WELCOME' // 负载内容
+        }
+    });
+}, 800);
 		 
     });
 // When webchat is ready
