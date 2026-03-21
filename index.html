@@ -365,7 +365,7 @@ const randomUserId = firstName ? ('user_' + firstName.toLowerCase()) : ('guest_'
 		// 3. 发送触发词
 setTimeout(() => {
     console.log("📡 发送自定义事件信号...");
-    window.botpress.sendEvent({
+    window.botpressWebChat.sendEvent({
         type: 'custom_event', // 类型必须是 trigger
         payload: { 
             action: 'START_MY_WELCOME' // 负载内容
